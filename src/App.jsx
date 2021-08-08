@@ -1,8 +1,18 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import Navbar from './components/Navbar';
+import { initializeIcons } from '@fluentui/font-icons-mdl2';
+import Titlebar from './components/Titlebar';
+import Test from './components/Test';
 
-function render() {
-  ReactDOM.render(<h2>Hello from React!</h2>, document.body);
-}
+const App = () => {
+  initializeIcons();
+  return (
+    <>
+      <Titlebar />
+      <Test />
+        {/* <Navbar /> */}
+    </>
+  );
+};
 
-render();
+export default App;

@@ -76,9 +76,14 @@
     "css-loader": "^6.0.0",
     "electron": "13.1.7",
     "node-loader": "^2.0.0",
+    "sass": "^1.37.5",
+    "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0"
   },
   "dependencies": {
+    "@fluentui/react": "^8.27.0",
+    "@fluentui/react-icons-mdl2": "^1.1.8",
+    "bootstrap": "^5.1.0",
     "electron-squirrel-startup": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
