@@ -8,6 +8,7 @@ module.exports = {
   module: {
     rules: require('./webpack.rules'),
   },
+  // target: 'electron-renderer',
   resolve: {
     extensions: [
       ".js",
