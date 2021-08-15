@@ -3,6 +3,7 @@ import { ChromeCloseIcon, ChromeMinimizeIcon, CheckboxIcon } from '@fluentui/rea
 // import { ipcRenderer } from 'electron';
 const { ipcRenderer, contextBridge } = require('electron');
 import { sendMessageToNode } from '../utils/renProcess';
+
 const Titlebar = () => {
 
     const DemoFun = () => {
