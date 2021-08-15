@@ -25,14 +25,18 @@ const Titlebar = () => {
             </div>
             <div class="tb-controls">
                 <div class="tb-cntrl"
-                    onClick={() => sendMessageToNode('minimize', ('A','B','Z'))}
+                    onClick={() => sendMessageToNode('minimize')}
                 >
                     <ChromeMinimizeIcon style={{ fontSize: 10 }} />
                 </div>
-                <div class="tb-cntrl">
+                <div class="tb-cntrl"
+                onClick={() => sendMessageToNode('maximize')}
+                >
                     <CheckboxIcon style={{ fontSize: 10 }} />
                 </div>
-                <div id="closeWindow" className="tb-cntrl">
+                <div id="closeWindow" className="tb-cntrl"
+                onClick={() => sendMessageToNode('closeWindow')}
+                >
                     <ChromeCloseIcon style={{ fontSize: 10 }} />
                 </div>
             </div>
