@@ -8,50 +8,75 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 
 const createWindow = () => {
   // Create the browser mainWindowdow.
+  let mainWin = null
+  let loading = new BrowserWindow({
+    show: false,
+    frame: false,
+    width: 400,
+    height: 250,
+    darkTheme: true,
+    resizable: false,
+    webPreferences: {
+      webSecurity: process.env.NODE_ENV !== 'development',
+    }
+  })
 
+  loading.loadFile(path.join(__dirname, 'loader.html'));
+  
   const primaryDisplay = screen.getPrimaryDisplay();
   const { width, height } = primaryDisplay.workAreaSize;
- 
 
-  const mainWindow = new BrowserWindow({
-    minWidth: 400,
-    minHeight: 200,
-    width:width - 500,
-    height: height - 200,
-    // backgroundColor: '#2e2c29',
-    // opacity:0.2,
-    // darkTheme:true,
-    // titleBarStyle:'hidden',
-    frame: false,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
-  });
+  loading.once('show', () => {
+    mainWin = new BrowserWindow({
+      minWidth: 400,
+      minHeight: 400,
+      width: width - 500,
+      height: height - 200,
+      show: false,
+      // backgroundColor: '#2e2c29',
+      // opacity:0.2,
+      darkTheme: true,
+      // titleBarStyle:'hidden',
+      frame: false,
+      webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false,
+        webSecurity: process.env.NODE_ENV !== 'development'
+      }
+    });
+    mainWin.webContents.once('dom-ready', () => {
+      console.log('mainWin loaded')
+      console.log(process.env.NODE_ENV);
+      mainWin.show()
+      loading.hide()
+      loading.close()
+    })
+    
 
-  // ipcMain.on('minimize', (_, title, message) => {
-  //   console.log("mibnin");
-  //   new Notification({ title: title, body: message }).show();
-  // })
 
-  ipcMain.on("minimize", () => mainWindow.minimize());
 
-  ipcMain.on("maximize", () => {
-    if (mainWindow.isMaximized()) {
-      mainWindow.unmaximize();
-      mainWindow.center();
-    } else {
-      mainWindow.maximize();
-    }
-  });
+    ipcMain.on("minimize", () => mainWin.minimize());
 
-  ipcMain.on("closeWindow", () => {
-    mainWindow.close();
-  });
+    ipcMain.on("maximize", () => {
+      if (mainWin.isMaximized()) {
+        mainWin.unmaximize();
+        mainWin.center();
+      } else {
+        mainWin.maximize();
+      }
+    });
 
-  // and load the index.html of the app.
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+    ipcMain.on("closeWindow", () => {
+      mainWin.close();
+    });
 
+
+
+
+    // long loading html
+    mainWin.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
+  })
+  loading.show()
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };
