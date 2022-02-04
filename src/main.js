@@ -1,10 +1,21 @@
-const { app, BrowserWindow, ipcMain, Notification, screen } = require('electron');
+const { app, BrowserWindow, ipcMain, Notification, screen, dialog } = require('electron');
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
 }
+let isSingleInstance = app.requestSingleInstanceLock()
+if (!isSingleInstance) {
+  app.quit()
+}
+
+// dialog.showMessageBox({
+//   title: 'Application is not responding',
+//   buttons: ['Dismiss'],
+//   type: 'warning',
+//   message: 'Application is not responding…',
+//  });
 
 const createWindow = () => {
   // Create the browser mainWindowdow.
@@ -14,6 +25,7 @@ const createWindow = () => {
     frame: false,
     width: 400,
     height: 250,
+    backgroundColor: '#050407',
     darkTheme: true,
     resizable: false,
     webPreferences: {
@@ -22,7 +34,11 @@ const createWindow = () => {
   })
 
   loading.loadFile(path.join(__dirname, 'loader.html'));
-  
+
+  loading.once('ready-to-show', () => {
+    loading.show()
+  })
+
   const primaryDisplay = screen.getPrimaryDisplay();
   const { width, height } = primaryDisplay.workAreaSize;
 
@@ -51,7 +67,7 @@ const createWindow = () => {
       loading.hide()
       loading.close()
     })
-    
+
 
 
 
@@ -70,13 +86,9 @@ const createWindow = () => {
       mainWin.close();
     });
 
-
-
-
     // long loading html
     mainWin.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
   })
-  loading.show()
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };

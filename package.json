@@ -1,8 +1,8 @@
 {
   "name": "xero-player",
-  "productName": "xero-player",
+  "productName": "xero-music-player",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A Crossplatform Music Player",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -19,12 +19,15 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./src/xeroLogo256.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "xero_player"
+            "name": "xero_player",
+            "icon": "./src/xeroLogo256.ico"
           }
         },
         {
