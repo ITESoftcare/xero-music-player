@@ -9,7 +9,7 @@ const App = () => {
   initializeIcons();
   return (
    <Layout>
-     
+     Demo
    </Layout>
   );
 };
