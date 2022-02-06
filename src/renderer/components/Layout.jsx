@@ -129,7 +129,6 @@ function Layout() {
                     component="main"
                     container
                     direction="column"
-                    xs={12}
                     sx={{padding: '37px 15px 15px 15px'}}
                 >
                     <Outlet />
