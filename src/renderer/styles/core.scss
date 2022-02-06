@@ -177,7 +177,7 @@ main {
 .tb-controls {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  -webkit-app-region: drag;
+  -webkit-app-region: no-drag;
 
   .tb-cntrl {
     display: flex;
@@ -187,12 +187,13 @@ main {
     padding-inline: 0.8rem;
     // padding-right: 0.5rem;
     // padding-left: 0.5rem;
-    &_back {
+    &_windows {
+      // -webkit-app-region: drag !important;
       margin-top: 0.3rem;
       margin-left: 5rem;
       margin-inline: 0.3rem;
       min-width: 71px;
-      border-radius: 4px
+      border-radius: 4px;
     }
   }
   .tb-cntrl:hover {
@@ -204,6 +205,6 @@ main {
 }
 
 .mac_back {
-margin-left: 5rem;
-margin-top: 0.5rem;
+  margin-left: 5rem;
+  margin-top: 0.5rem;
 }
