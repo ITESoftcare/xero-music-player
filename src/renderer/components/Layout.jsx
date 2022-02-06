@@ -130,7 +130,7 @@ function Layout() {
                     container
                     direction="column"
                     xs={12}
-                    sx={{padding: '32px 15px 15px 15px'}}
+                    sx={{padding: '37px 15px 15px 15px'}}
                 >
                     <Outlet />
                 </Grid>

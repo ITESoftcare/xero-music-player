@@ -53,6 +53,10 @@ const createWindow = () => {
       // opacity:0.2,
       darkTheme: true,
       // titleBarStyle:'hidden',
+trafficLightPosition: {
+  x: 10,
+  y:13
+},
       // frame: false,
       titleBarStyle: 'hidden',
       titleBarOverlay: {
@@ -102,7 +106,7 @@ const createWindow = () => {
 // initialization and is ready to create browser mainWindowdows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
-
+  
 // Quit when all mainWindowdows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.

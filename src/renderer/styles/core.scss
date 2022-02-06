@@ -177,7 +177,7 @@ main {
 .tb-controls {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  -webkit-app-region: no-drag;
+  -webkit-app-region: drag;
 
   .tb-cntrl {
     display: flex;
@@ -189,6 +189,7 @@ main {
     // padding-left: 0.5rem;
     &_back {
       margin-top: 0.3rem;
+      margin-left: 5rem;
       margin-inline: 0.3rem;
       min-width: 71px;
       border-radius: 4px
@@ -200,4 +201,9 @@ main {
   #closeWindow:hover {
     background: #c42b1c;
   }
+}
+
+.mac_back {
+margin-left: 5rem;
+margin-top: 0.5rem;
 }
