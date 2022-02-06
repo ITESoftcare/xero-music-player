@@ -208,3 +208,55 @@ main {
   margin-left: 5rem;
   margin-top: 0.5rem;
 }
+
+nav .control-window {
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  z-index: 10;
+  height: 19px;
+}
+
+.traffic-light {
+  display: flex;
+  margin: 10px 0px 0px 5px;
+  border-radius: 100%;
+  text-indent: -9999px;
+  position: relative;
+  .close-unix {
+    background: #ff5f56;
+    margin-inline: 4px;
+    border-radius: 100%;
+    // box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    &:hover {
+      background: #ff5f56 url(../../img/close-hover.png) 1px 1px no-repeat;
+      z-index: 2000;
+    }
+  }
+  .mini-unix {
+    background: #ffbd2e;
+    border-radius: 100%;
+    margin-inline: 4px;
+    // box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    &:hover {
+      background: #ffbd2e url(../../img/min-hover.png) 1px 1px no-repeat;
+      z-index: 2000;
+    }
+  }
+  .res-unix {
+    background: #27c93f;
+    border-radius: 100%;
+    margin-inline: 4px;
+    // box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    &:hover {
+      background: #27c93f url(../../img/maxi-hover.png) 1px 1px no-repeat;
+      z-index: 2000;
+    }
+  }
+}
