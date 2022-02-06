@@ -1,10 +1,20 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx'
-import "./styles/sass/core.scss"
+import "./renderer/styles/core.scss"
+import { StateProvider } from './renderer/utils/store.js';
 
 function render() {
-  ReactDOM.render(<App />, document.body);
+  ReactDOM.render(
+    <React.StrictMode>
+      <StateProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </StateProvider>
+    </React.StrictMode>
+    , document.getElementById('app'));
 }
 
 render();

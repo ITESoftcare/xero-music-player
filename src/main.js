@@ -53,7 +53,12 @@ const createWindow = () => {
       // opacity:0.2,
       darkTheme: true,
       // titleBarStyle:'hidden',
-      frame: false,
+      // frame: false,
+      titleBarStyle: 'hidden',
+      titleBarOverlay: {
+        color: '#131313',
+        symbolColor: '#ffffff'
+      },
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
