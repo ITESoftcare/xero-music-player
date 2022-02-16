@@ -260,3 +260,31 @@ nav .control-window {
     }
   }
 }
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 3.5px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  background-color: RGBA(173, 63, 169, 1);
+  -webkit-border-radius: 7px;
+  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.lib-art-cont {
+   flex: '1 0 calc(13%)'
+}
