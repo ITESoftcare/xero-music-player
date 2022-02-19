@@ -11,7 +11,7 @@ const Library = () => {
       <>
          <Grid container item spacing={2} xs={12}>
             <Grid item xs={12}>
-               <Typography mt={2} ml={2} variant="h3">
+               <Typography mt={4} ml={2} variant="h3">
                   My Library
                </Typography>
             </Grid>
