@@ -29,6 +29,7 @@ import AdbOutlinedIcon from '@mui/icons-material/AdbOutlined';
 import LibraryMusicOutlinedIcon from '@mui/icons-material/LibraryMusicOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import PlayBar from './PlayBar';
 
 const drawerWidth = 360;
 
@@ -148,8 +149,14 @@ function Layout() {
                   </CustomLink>
                </List>
             </Drawer>
+
             <Grid component="main" container sx={{ maxHeight: '100vh' }}>
+               <Grid container item xs={12} /* sx={{ mb: -20 }} */>
                   <Outlet />
+               </Grid>
+               <Grid container item spacing={2} xs={12} sx={{ mt: -22, height: 160, zIndex: 1 }}>
+                  <PlayBar />
+               </Grid>
             </Grid>
          </Box>
       </>

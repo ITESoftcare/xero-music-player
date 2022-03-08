@@ -58,7 +58,7 @@ const createWindow = () => {
             x: 10,
             y: 13,
          },
-         frame: false, // NEED TO CHECK ON WIN /MAC
+         frame: false, // NEED TO CHECK ON WIN /MAC ::DONE::
          titleBarStyle: 'hidden',
          titleBarOverlay: {
             color: '#131313',

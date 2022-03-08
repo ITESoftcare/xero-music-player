@@ -50,6 +50,7 @@
           "@electron-forge/plugin-webpack",
           {
             "mainConfig": "./webpack.main.config.js",
+            "devContentSecurityPolicy": "'unsafe-eval'",
             "renderer": {
               "config": "./webpack.renderer.config.js",
               "entryPoints": [
@@ -82,7 +83,8 @@
     "node-loader": "^2.0.0",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
-    "style-loader": "^3.0.0"
+    "style-loader": "^3.0.0",
+    "svg-react-loader": "^0.4.6"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
