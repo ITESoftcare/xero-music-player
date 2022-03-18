@@ -14,6 +14,7 @@ import VolumeDownRounded from '@mui/icons-material/VolumeDownRounded';
 import { Card, Grid, Hidden, Paper } from '@mui/material';
 import DiscordIcon from 'svg-react-loader?name=DiscordIcon!../../img/discord-logo.svg';
 import { RepeatRounded, ShuffleRounded } from '@mui/icons-material';
+import { sendMessageToNode } from '../../main/utils/renProcess';
 
 const CoverImage = styled('div')({
    width: 140,
@@ -205,7 +206,10 @@ export default function PlayBar() {
                <IconButton aria-label="repeat">
                   <RepeatRounded />
                </IconButton>
-               <IconButton aria-label="discord visibility">
+               <IconButton
+                  onClick={() => sendMessageToNode('show-file-picker', { title: 'add-to-playlist' })}
+                  aria-label="discord visibility"
+               >
                   <DiscordIcon style={{ width: 25, height: 25 }} />
                </IconButton>
             </Box>

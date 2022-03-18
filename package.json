@@ -1,7 +1,7 @@
 {
   "name": "xero-player",
-  "productName": "xero-music-player",
-  "version": "1.0.0",
+  "productName": "Xero Music Player",
+  "version": "0.5.0",
   "description": "A Crossplatform Music Player",
   "main": ".webpack/main",
   "scripts": {
@@ -16,7 +16,7 @@
     "name": "ITESaurabh",
     "email": "itesaurabh@yahoo.com"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "config": {
     "forge": {
       "packagerConfig": {
@@ -69,11 +69,11 @@
   "devDependencies": {
     "@babel/core": "^7.17.0",
     "@babel/preset-react": "^7.16.7",
-    "@electron-forge/cli": "^6.0.0-beta.59",
-    "@electron-forge/maker-deb": "^6.0.0-beta.59",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.59",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.59",
-    "@electron-forge/maker-zip": "^6.0.0-beta.59",
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "@electron-forge/plugin-webpack": "6.0.0-beta.59",
     "@vercel/webpack-asset-relocator-loader": "1.6.0",
     "babel-loader": "^8.2.3",
@@ -94,6 +94,7 @@
     "@mui/material": "^5.4.0",
     "bootstrap": "^5.1.0",
     "electron-squirrel-startup": "^1.0.0",
+    "node-id3": "^0.2.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
