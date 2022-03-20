@@ -1,6 +1,7 @@
 import { app } from 'electron';
 import path from 'path';
 import fs from 'fs';
+const os = require('os');
 
 export const APP_CONF_FOLDER = app.getPath('userData');
 export const MUSIC_DIR = path.join(os.homedir(), 'Music');

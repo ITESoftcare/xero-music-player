@@ -94,6 +94,8 @@
     "@mui/material": "^5.4.0",
     "bootstrap": "^5.1.0",
     "electron-squirrel-startup": "^1.0.0",
+    "jsmediatags": "^3.9.7",
+    "mp3-duration": "^1.1.0",
     "node-id3": "^0.2.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

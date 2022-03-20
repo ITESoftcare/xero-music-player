@@ -1,7 +1,7 @@
 import { BrowserWindow, dialog, ipcMain } from 'electron';
 import fs from 'fs';
 import path from 'path';
-import { parseDir } from '../modules/FileParser';
+import { parseDir, parseMusic } from '../modules/FileParser';
 
 export default function mainIpcs(mainWin) {
    ipcMain.on('minimize', () => mainWin.minimize());
@@ -28,7 +28,7 @@ export default function mainIpcs(mainWin) {
       });
    });
 
-   ipcMain.on('show-file-picker', (e, payload) => {
+   ipcMain.on('show-file-picker', async (e, payload) => {
       const { title } = payload;
       let myTracks = [];
       dialog
@@ -42,7 +42,15 @@ export default function mainIpcs(mainWin) {
             } else {
                const folder = result.filePaths[0];
                try {
-                  const myList = parseDir(folder);
+                  const SongsPathList = parseDir(folder);
+
+                  SongsPathList.forEach(songPath => {
+                     const SongInfo = parseMusic(songPath);
+                     SongInfo.then(song => {
+                        console.log('Info', song);
+                     });
+                  });
+
                   // const folderCont = fs
                   //    .readdirSync(folder)
                   //    .map(content => path.join(folder, content))
@@ -55,7 +63,7 @@ export default function mainIpcs(mainWin) {
                   //    .filter(content => content.extension == '')
                   //    .map(subFolder => path.join(folder, subFolder.name));
                   // file;
-                  console.log(myList);
+                  // console.log(myList);
                   // console.log(subFolders);
                   // previewWin.loadURL(`file://${file}`);
                } catch (e) {
